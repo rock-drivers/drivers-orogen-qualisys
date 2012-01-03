@@ -1,0 +1,34 @@
+name "qualisys"
+version "0.1"
+
+import_types_from "base"
+using_library "qualisys"
+
+task_context "Task" do
+
+    property( "body_label", "/std/string" ).
+	doc( "selects the qualisys body label, which should be tracked." )
+
+    property( "qtm_host", "/std/string" ).
+	doc( "hostname of the qtm server, which should be connected" )
+
+    property( "qtm_base_port", "/int", 22222 ).
+	doc( "base port of the qtm_server" )
+
+    output_port( "body_samples", "/base/samples/RigidBodyState" ).
+	doc( "pose samples of the tracked body." )
+
+    needs_configuration
+end
+
+
+# Declares a deployment, i.e. an actual executable that contains various tasks.
+deployment "qualisys_test" do
+    # This is a test deployment that should not be installed
+    do_not_install
+
+    # Declares it as periodic, with a period of 100ms
+    task("qualisys", "Task").
+	periodic(0.01)
+end
+

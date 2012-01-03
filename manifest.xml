@@ -1,0 +1,9 @@
+<package>
+  <description brief="Orogen component for Qualisys motion tracking system">
+  This component provides pose data for a tracked object in the qualisys motion
+  tracking system. It uses a TCP connection to the QTM server to transfer live
+  tracking data.
+  </description>
+  <author>Jakob Schwendner/jakob.schwendner@dfki.de</author>
+  <depend package="drivers/qualisys" />
+</package>
