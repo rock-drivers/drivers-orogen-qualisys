@@ -1,7 +1,7 @@
 /* Generated from orogen/lib/orogen/templates/tasks/Task.cpp */
 
 #include "Task.hpp"
-#include <base/logging.h>
+#include <base-logging/Logging.hpp>
 
 using namespace qualisys;
 
